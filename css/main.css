@@ -1,0 +1,40 @@
+.container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+header {
+    text-align: center;
+}
+
+.menu {
+    width: 220px;
+    max-width: 100%;
+}
+
+.button {
+    padding: 0;
+    white-space: normal;
+    height: auto;
+}
+
+.grey-box {
+    background-color: #ebebeb;
+    padding: 20px;
+    text-align: left;
+}
+
+.grey-box h5 {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.grey-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.grey-box ul li {
+    margin-bottom: 10px;
+}
