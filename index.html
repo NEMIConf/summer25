@@ -1,125 +1,1236 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <meta charset="utf-8">
-    <title>NEMI: New England Mechanistic Interpretability</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <title>New England Mechanistic Interpretability (NEMI) Workshop</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+    rel="stylesheet">
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" href="css/main.css">
+  <!-- Vendor CSS Files (Only the essential ones) -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Modal styles -->
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 800px;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .close-modal {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close-modal:hover,
+    .close-modal:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .modal-header img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .modal-header-info h3 {
+      margin: 0;
+    }
+
+    .modal-header-info p {
+      margin: 5px 0;
+      color: #666;
+    }
+
+    .modal-section {
+      margin-bottom: 15px;
+    }
+
+    .modal-section h4 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .speaker-link {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: underline;
+    }
+
+    .speaker-link:hover {
+      color: #0056b3;
+    }
+
+    .talk-title.speaker-link {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .talk-title.speaker-link:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
 
-    </br>
-    <header class="row">
-        <h3>New England Mechanistic Interpretability Workshop Series<br/><br/>
-            <img src="images/nemi_logo.png" height="150">
-        </h3>
-        <!-- <img src="images/nemi-2024-photo.jpg" style="max-width:100%"> -->
-    </header>
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center ">
+    <div class="container-fluid container-xxl d-flex align-items-center">
+      <div id="logo" class="me-auto">
+        <a href="index.html" class="scrollto"><img src="assets/img/logo.png" alt="" title=""></a>
+      </div>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="accepted_work.html">Accepted Work</a></li>
+          <li><a class="nav-link scrollto" href="keynote_speakers.html">Keynote Speakers</a></li>
+          <li><a class="nav-link scrollto" href="#cfp">Call for Papers</a></li>
+          <li><a class="nav-link scrollto" href="#directions">Directions</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+      <h1 class="mb-4 pb-0" style="text-transform: none; text-align: left;">
+        New England Mechanistic Interpretability (NEMI) workshop
+      </h1>
+      <h2 style="color: #fff; text-align: left; font-size: 30px;">
+        August 22, 2025, Northeastern University, Boston
+      </h2>
+      <!--    <div class="social-links" style="margin-top: 25px;">-->
+      <!--      <a href="https://x.com/HanSineng/status/" target="_blank" rel="noopener noreferrer" style="margin-right: 15px; text-decoration: none; color: #1DA1F2;">-->
+      <!--        Twitter-->
+      <!--      </a>-->
+    </div>
+    </div>
+  </section>
+
+  <!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container position-relative" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>About The Meeting</h2>
+            <p style="font-size: 18px;">The New England Mechanistic Interpretability (NEMI) workshop aims to bring together academic and industry researchers from the New England and surrounding regions who are advancing the field of mechanistic interpretability in machine learning systems. The workshop will serve as a forum to share recent progress, challenges, and ideas in reverse-engineering, circuit analysis, and other techniques that seek to understand how models compute internally.
+
+            NEMI seeks to foster a participatory and collaborative environment where researchers at all levels—including graduate students, early-career scientists, and established experts—can engage in discussion and feedback. We particularly encourage submissions from rising researchers currently enrolled in graduate programs at New England-based universities.
+
+            Topics of interest include, but are not limited to, interpretability of neural circuits, activation patching, probe-based analysis, feature attribution methods, model simplification, scaling laws and applications as applied to interpretability. The workshop will feature a dynamic program including invited keynote speakers, selected oral presentations, interactive poster sessions, and opportunities for open discussion.
+            </p>
+          </div>
+        </div>
+        <!-- <a href="accepted_work.html"><h3><u>Accepted Work and Awards Announced! 🎉</u></h3></a> -->
+        <div class="container" data-aos="fade-up">
+          <!-- <div class="section-header">
+            <h2>Directions</h2>
+          </div> -->
+          <!-- <h4>Venues</h4> -->
+          <!-- <br>  -->
+          <!-- <div class="maps-row">
+            <div class="map-container">
+              <p>Main Stage: <a href="https://maps.app.goo.gl/rrm41fCWWEaAw8A18">53 Wall St Auditorium</a> (first door on the left upon entrance)</p>
+            </div>
+            <div class="map-container">
+              <p>Poster Session: <a href="https://maps.app.goo.gl/xj1RvozC4TrsBdao7">Yale 17 Hillhouse Avenue (HLH17)</a>, Room 101 and Room 115</p>
+            </div>
+          </div> -->
+          
+          <!-- Event Photos Section -->
+          <!-- <div class="section-header">
+            <h3>Event Photos</h3>
+          </div> -->
+          <!-- <div class="event-photos"> -->
+            <!-- <div class="photo-grid"> -->
+              <!-- Add your photos here -->
+              <!-- Example structure (uncomment and replace src with actual image paths): -->
+              <div class="photo-item">
+                <img src="images/nemi-2024-photo.jpg" alt="2024 NEMI Photo">
+              </div>
+            <!-- </div> -->
+          <!-- </div> -->
+
+          <style>
+            .event-photos {
+              margin: 30px 0;
+            }
+            .photo-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+              gap: 20px;
+              padding: 20px 0;
+            }
+            .photo-item {
+              width: 100%;
+              /* aspect-ratio: 4/3; */
+              overflow: hidden;
+              border-radius: 8px;
+              box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .photo-item img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.3s ease;
+            }
+            .photo-item img:hover {
+              transform: scale(1.05);
+            }
+            @media (max-width: 768px) {
+              .photo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+              }
+            }
+          </style>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Schedule Section ======= -->
+    <section id="schedule">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Schedule</h2>
+        </div>
+
+        <div class="schedule-table">
+          <table class="table">
+            <tbody>
+              <!-- <tr>
+                <td width="25%"><strong>09:00 AM - 09:20 AM</strong></td>
+                <td>Breakfast & Registration</td>
+              </tr> -->
+              <tr>
+                <td><strong>10:00 AM - 10:10 AM</strong></td>
+                <td>Opening Remarks</td>
+              </tr>
+              <tr>
+                <td><strong>10:10 AM - 10:30 AM</strong></td>
+                <td>Keynote 1: Lee Sharkey: <i><a href="#" onclick="openModal('lee-modal'); return false;">"Mech Interp: Where should we go from here?"</a></i></td>
+              </tr>
+              <tr>
+                <td><strong>10:30 AM - 10:40 AM</strong></td>
+                <td>Student Talk 1</td>
+              </tr>
+              <tr>
+                <td><strong>10:40 AM - 10:50 AM</strong></td>
+                <td>Student Talk 2</td>
+              </tr>
+              <tr>
+                <td><strong>10:50 AM - 11:00 AM</strong></td>
+                <td>Coffee Break (10 mins)</td>
+              </tr>
+              <tr>
+                <td><strong>11:00 AM - 11:20 AM</strong></td>
+                <td>Keynote 2: Tamar Rott Shaham: <i><a href="#" onclick="openModal('tamar-modal'); return false;">"Can Language Models Interpret Humans?"</a></i></td>
+              </tr>
+              <tr>
+                <td><strong>11:20 AM - 11:50 PM</strong></td>
+                <td>Round 1 of LLM Team Matching</td>
+              </tr>
+              <tr>
+                <td><strong>11:50 PM - 12:00 PM</strong></td>
+                <td>Group Photo</td>
+              </tr>
+              <tr>
+                <td><strong>12:00 PM - 01:00 PM</strong></td>
+                <td>Lunch + Continued Team Matching</td>
+              </tr>
+              <tr>
+                <td><strong>01:00 PM - 02:00 PM</strong></td>
+                <td>NDIF/NNsight + 2nd/3rd Round of Matches</td>
+              </tr>
+              <tr>
+                <td><strong>02:00 PM - 04:00 PM</strong></td>
+                <td>Poster Session</td>
+              </tr>
+              <tr>
+                <td><strong>04:00 PM - 04:10 PM</strong></td>
+                <td>Coffee Break</td>
+              </tr>
+              <tr>
+                <td><strong>04:10 PM - 04:30 PM</strong></td>
+                <td>Keynote 3: Aaron Mueller: <i><a href="#" onclick="openModal('aaron-modal'); return false;">"Beyond Human Concepts: Evaluating and Applying Unsupervised Interpretability"</a></i></td>
+              </tr>
+              <tr>
+                <td><strong>04:30 PM - 04:40 PM</strong></td>
+                <td>Student Talk 3</td>
+              </tr>
+              <tr>
+                <td><strong>04:40 PM - 04:50 PM</strong></td>
+                <td>Student Talk 4</td>
+              </tr>
+              <tr>
+                <td><strong>04:50 PM - 05:10 PM</strong></td>
+                <td>Keynote 3: Ekdeep Singh Lubana: <i><a href="#" onclick="openModal('ekdeep-modal'); return false;">"Looking Inwards: Implicit Assumptions Formally Constrain Mechanistic Interpretability"</a></i></td>
+              </tr>
+              <tr>
+                <td><strong>05:10 PM - 05:50 PM</strong></td>
+                <td>Panel Discussion</td>
+              </tr>
+              <tr>
+                <td><strong>05:55 PM - 06:00 PM</strong></td>
+                <td>Closing Remarks</td>
+              </tr>
+              <tr>
+                <td><strong>06:00 PM+</strong></td>
+                <td>Optional Social</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section><!-- End Schedule Section -->
+
+    <section id="cfp">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Registration</h2>
+        </div>
+        <p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdJmISMQoOQWYTyaMYG-Te7_lieta203BQEqXa6N_PqYiv15A/viewform?usp=header">Register</a> by August 4, 2025.
+        </p>
+        <div class="section-header">
+          <h2>Submission Guidelines</h2>
+        </div>
+        <p>
+          We invite <a href="https://docs.google.com/forms/d/e/1FAIpQLScgZGP4mXNBNbT38RpStqOPmwitbKnAOS4DwAfNHHjb50I8oA/viewform?usp=header">submissions</a> for the NEMI 2025 workshop, a one-day event dedicated to exploring the latest developments in mechanistic interpretability research. We welcome submissions on all aspects of interpretability. Some of them will be selected for oral presentations and the remaining will be presented as posters. We encourage submissions from rising researchers who are enrolled in graduate programs at universities located in the New England region.
+        </p>
+        <div class="section-header">
+          <h2>Dates</h2>
+        </div>
+        <ul class="fa-ul">
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b><a href="https://docs.google.com/forms/d/e/1FAIpQLSdJmISMQoOQWYTyaMYG-Te7_lieta203BQEqXa6N_PqYiv15A/viewform?usp=header">Registration</a> deadline</b>: August 4, 2025, (AOE)
+          </li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b><a href="https://docs.google.com/forms/d/e/1FAIpQLScgZGP4mXNBNbT38RpStqOPmwitbKnAOS4DwAfNHHjb50I8oA/viewform?usp=header">Submission</a> deadline</b>: August 9, 2025, (AOE)
+          </li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Notification</b>: August 12, 2025, (AOE)</li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Event Date</b>: August 22, 2025</li>
+        </ul>
+        <!--          Deadlines are strict and will not be extended under any circumstances. All deadlines follow the <a href="https://time.is/Anywhere_on_Earth">Anywhere on Earth (AoE)</a> timezone.-->
+        <!--          <br>-->
+        <br>
+        <!-- <div class="section-header">
+          <h2>Topics</h2>
+        </div>
+        <p>We welcome contributions across a broad spectrum of topics, including but not limited to:</p>
+
+        <div class="topic-list">
+          <ul>
+            <li>
+              <span>LLM Training Methods</span>
+              <ul>
+                <li>Pretraining</li>
+                <li>Post-training</li>
+                <li>Training algorithms</li>
+              </ul>
+            </li>
+
+            <li>
+              <span>Evaluation of LLM-based Systems</span>
+              <ul>
+                <li>Benchmarks</li>
+                <li>Evaluation paradigms</li>
+                <li>Evaluation methodologies and frameworks</li>
+              </ul>
+            </li>
+
+            <li>
+              <span>Safety and Alignment</span>
+              <ul>
+                <li>Alignment Training</li>
+                <li>Alignment Data</li>
+                <li>Reliability</li>
+                <li>Explainability</li>
+                <li>Robustness</li>
+              </ul>
+            </li>
+
+            <li>
+              <span>Reasoning</span>
+              <ul>
+                <li>Mathematical Reasoning</li>
+                <li>Logical Reasoning</li>
+                <li>Commonsense Reasoning</li>
+                <li>Real-world applications</li>
+              </ul>
+            </li>
+
+            <li>
+              <span>Multimodal Foundation Models</span>
+              <ul>
+                <li>Training techniques</li>
+                <li>Data and benchmarks</li>
+                <li>New applications</li>
+              </ul>
+            </li>
+
+            <li>
+              <span>LLM Agents</span>
+              <ul>
+                <li>Agent components</li>
+                <li>Planning and decision-making</li>
+                <li>Tool usage</li>
+                <li>End-to-end agentic systems</li>
+              </ul>
+            </li>
+
+            <li>
+              <span>Data-centric NLP</span>
+              <ul>
+                <li>Data collection for model training</li>
+                <li>Contamination and bias in NLP data</li>
+                <li>Synthetic data generation methods</li>
+                <li>Data quality</li>
+              </ul>
+            </li>
+
+            <li>
+              <span>Code Models</span>
+              <ul>
+                <li>Code generation and completion</li>
+                <li>Code understanding and optimization</li>
+                <li>Applications in software engineering</li>
+              </ul>
+            </li>
+
+            <li>
+              <span>Interpretability</span>
+              <ul>
+                <li>Novel interpretability approaches</li>
+                <li>Mechanistic interpretability</li>
+                <li>Causal relationships in NLP models</li>
+                <li>Visualization tools for interpretability</li>
+              </ul>
+            </li>
+
+            <li>
+              <span>Human-centered NLP</span>
+              <ul>
+                <li>User experience and design</li>
+                <li>Human-AI interaction</li>
+                <li>Accessibility and inclusivity</li>
+              </ul>
+            </li>
+
+            <li>
+              <span>Low-resource and Multi-lingual NLP</span>
+              <ul>
+                <li>Evaluation benchmarks</li>
+                <li>Cross-lingual alignment</li>
+                <li>Resource-efficient training techniques</li>
+              </ul>
+            </li>
+
+            <li>
+              <span>Applications of LLMs to Other Domains</span>
+              <ul>
+                <li>Healthcare and medical applications</li>
+                <li>Law and finance</li>
+                <li>Creative industries and arts</li>
+                <li>Scientific research</li>
+              </ul>
+            </li>
+
+            <li>
+              <span>Theory</span>
+              <ul>
+                <li>Theoretical foundations of NLP</li>
+                <li>Complexity and computation in language models</li>
+                <li>Challenges and open problems</li>
+              </ul>
+            </li>
+
+            <li>
+              <span>Ethical and Societal Impacts</span>
+              <ul>
+                <li>Bias and fairness mitigation</li>
+                <li>Privacy-preserving techniques</li>
+                <li>Societal impacts and ethical concerns</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <p>Accepted papers will be presented as posters, with a subset selected for oral presentations. The workshop
+          will take place in person in New Haven. 1 - 2 Best Paper Awards with will be given to the top papers! </p>
+
+        <!--          <p>Submissions exceeding the page limit will be desk rejected.</p>-->
+
+        <!--          <h5>Anonymity</h5>-->
+        <!--          The workshop follows a <b>double-blind review process</b>. Submissions must be anonymized by removing author names, affiliations, and acknowledgments. Prior work should be cited in the third person. Identifying information, including in supplementary materials, must be omitted.-->
+        <!--          <br>-->
+        <!--          <br>-->
+        <!--          <h5>Dual Submission and Non-Archival Policy </h5>-->
+        <!--          Submissions under review at other venues will be accepted, provided they do not breach any dual-submission or anonymity policies of those venues. Submissions will not be indexed or have archival proceedings. We welcome ICML 25 or ACL 25 submissions.-->
+        <!--          <br>-->
+        <!--          <br>-->
+        <!--          <h5>Transparency </h5>-->
+        <!--          By submitting to the Reasoning and Planning for LLMs Workshop, authors agree that for all accepted papers, the original submission, reviews, and meta-reviews will be made publicly available on OpenReview. -->
+        <!--          <br>-->
+        <!--          <br>-->
+        <!-- <p>Previous meetups: <a href="https://nemiconf.github.io/spr2024/"> NEMI 2024 (Northeastern University)</a></p>
+
+      </div> -->
+    </section>
+
+    <style>
+      /* Add this CSS to your stylesheet */
+      .maps-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .map-container {
+        flex: 1;
+        min-width: 300px;
+        /* Ensures maps don't get too small on narrow screens */
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 350px;
+        /* Adjust height as needed */
+        border: 0;
+      }
+
+      /* Media query for mobile devices */
+      @media (max-width: 768px) {
+        .maps-row {
+          flex-direction: column;
+        }
+      }
+
+      /* Talk title styling */
+      .talk-title {
+        margin-top: 8px;
+        font-style: italic;
+        font-size: 14px;
+        color: #555;
+        line-height: 1.4;
+        text-align: left;
+      }
+
+      /* Organizer-info remains as is */
+      .organizer-info {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* New keynote-speaker class with more spacing */
+      .keynote-speaker {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        padding: 15px;
+        transition: all 0.3s ease;
+      }
+
+      /* Apply wider spacing to the keynote speakers row */
+      #keynotes .row {
+        margin-bottom: 30px;
+      }
+
+      /* Increase spacing between keynote speakers */
+      #keynotes .col-lg-3 {
+        margin-bottom: 40px;
+      }
+
+      /* Same adjustment for panelists */
+      #panelists .col-lg-3 {
+        margin-bottom: 40px;
+      }
+
+      .food-tag {
+        display: inline-block;
+        background-color: #f8f1e4;
+        color: #e0a800;
+        font-size: 0.8em;
+        padding: 2px 6px;
+        margin-left: 5px;
+        border-radius: 3px;
+        font-weight: 500;
+      }
+    </style>
+
+    <section id="keynotes">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Keynote Speakers</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="keynote-speaker">
+              <div class="organizer-img">
+                <img src="assets/img/speakers/lee.webp" alt="Lee Sharkey">
+              </div>
+              <h4 style="text-align: center;"><a href="https://leesharkey.github.io/" target="_blank">Lee<br />Sharkey</a></h4>
+              <span>Goodfire</span>
+              <div class="talk-title speaker-link" onclick="openModal('lee-modal'); return false;">Mech Interp: Where should we go from here?</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="keynote-speaker">
+              <div class="organizer-img">
+                <img src="assets/img/speakers/tamar.jpg" alt="Tamar Rott Shaham">
+              </div>
+              <h4 style="text-align: center;"><a href="https://tamarott.github.io/" target="_blank">Tamar Rott Shaham</a></h4>
+              <span>MIT</span>
+              <div class="talk-title speaker-link" onclick="openModal('tamar-modal'); return false;">Can Language Models Interpret Humans?</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="keynote-speaker">
+              <div class="organizer-img">
+                <img src="assets/img/speakers/aaron.jpeg" alt="Aaron Mueller">
+              </div>
+              <h4 style="text-align: center;"><a href="https://aaronmueller.github.io/" target="_blank">Aaron<br />Mueller</a></h4>
+              <span>Boston University</span>
+              <div class="talk-title speaker-link" onclick="openModal('aaron-modal'); return false;">Beyond Human Concepts: Evaluating and Applying Unsupervised Interpretability</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="keynote-speaker">
+              <div class="organizer-img">
+                <img src="assets/img/speakers/ekdeep.jpeg" alt="Ekdeep Singh Lubana">
+              </div>
+              <h4 style="text-align: center;"><a href="https://ekdeepslubana.github.io/" target="_blank">Ekdeep Singh Lubana</a></h4>
+              <span>Yale University</span>
+              <div class="talk-title speaker-link" onclick="openModal('ekdeep-modal'); return false;">Looking Inwards: Implicit Assumptions Formally Constrain Mechanistic Interpretability</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="panelists">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Panelists</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="keynote-speaker">
+              <div class="organizer-img">
+                <img src="assets/img/speakers/david.png" alt="David Bau">
+              </div>
+              <h4><a href="https://baulab.info/" target="_blank">David Bau</a></h4>
+              <span>Northeastern University</span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="keynote-speaker">
+              <div class="organizer-img">
+                <img src="assets/img/speakers/claircardi.jpg" alt="Claire Cardie">
+              </div>
+              <h4><a href="https://www.cs.cornell.edu/home/cardie/" target="_blank">Claire Cardie</a></h4>
+              <span>Cornell University</span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="keynote-speaker">
+              <div class="organizer-img">
+                <img src="assets/img/speakers/bob.png" alt="Bob Frank">
+              </div>
+              <h4><a href="https://ling.yale.edu/profile/robert-frank" target="_blank">Bob Frank</a></h4>
+              <span>Yale University</span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="keynote-speaker">
+              <div class="organizer-img">
+                <img src="assets/img/speakers/najoung.png" alt="Najoung Kim">
+              </div>
+              <h4><a href="https://najoungkim.github.io/" target="_blank">Najoung Kim</a></h4>
+              <span>Boston University</span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="keynote-speaker">
+              <div class="organizer-img">
+                <img src="assets/img/speakers/yoon.jpg" alt="Yoon Kim">
+              </div>
+              <h4><a href="http://people.csail.mit.edu/yoonkim/" target="_blank">Yoon Kim</a></h4>
+              <span>MIT</span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="keynote-speaker">
+              <div class="organizer-img">
+                <img src="assets/img/speakers/jason.jpg" alt="Jason Weston">
+              </div>
+              <h4><a href="https://ai.meta.com/people/1163645124801199/jason-weston/" target="_blank">Jason Weston</a></h4>
+              <span>Meta / New York University</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ======= Organizers Section ======= -->
+    <section id="organizers">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Student Organizers</h2>
+        </div>
+
+        <div class="row">
+          <!-- Organizer 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <div class="organizer-img">
+                <img src="assets/img/organizers/koyena.webp" alt="Organizer 1">
+              </div>
+              <h4>Koyena Pal</h4>
+              <span>Northeastern University</span>
+              <div class="social">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <div class="organizer-img">
+                <img src="assets/img/organizers/alex.webp" alt="Organizer 1">
+              </div>
+              <h4>Alex Loftus</h4>
+              <span>Northeastern University</span>
+              <div class="social">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <div class="organizer-img">
+                <img src="assets/img/organizers/emma.webp" alt="Organizer 1">
+              </div>
+              <h4>Emma Bortz</h4>
+              <span>Northeastern University</span>
+              <div class="social">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <div class="organizer-img">
+                <img src="assets/img/organizers/aruna.jpg" alt="Organizer 1">
+              </div>
+              <h4>Aruna Sankaranarayanan</h4>
+              <span>MIT</span>
+              <div class="social">
+              </div>
+            </div>
+          </div>
+          <!-- Add more organizers as needed -->
+        </div>
+      </div>
+    </section><!-- End Organizers Section -->
+
+
+
+    <!-- ======= Senior Organizers Section ======= -->
+    <section id="organizers">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Senior Program Committee</h2>
+        </div>
+
+        <div class="row">
+          <!-- Organizer 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <div class="organizer-img">
+                <img src="assets/img/organizers/david.jpg" alt="Organizer 1">
+              </div>
+              <h4>David Bau</h4>
+              <span>Northeastern University</span>
+              <div class="social">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <div class="organizer-img">
+                <img src="assets/img/organizers/jacob.png" alt="Organizer 1">
+              </div>
+              <h4>Jacob Andreas</h4>
+              <span>MIT</span>
+              <div class="social">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <div class="organizer-img">
+                <img src="assets/img/organizers/hima.png" alt="Organizer 1">
+              </div>
+              <h4>Hima Lakkaraju</h4>
+              <span>Harvard</span>
+              <div class="social">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <div class="organizer-img">
+                <img src="assets/img/organizers/najoung.png" alt="Organizer 1">
+              </div>
+              <h4>Najoung Kim</h4>
+              <span>Boston University</span>
+              <div class="social">
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more organizers as needed -->
+        </div>
+      </div>
+    </section><!-- End Organizers Section -->
+
+    <section id="organizers">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Logistics Support</h2>
+        </div>
+
+        <div class="row">
+          <!-- Organizer 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <div class="organizer-img">
+                <img src="assets/img/organizers/heather.jpg" alt="Organizer 1">
+              </div>
+              <h4>Heather Sciacca</h4>
+              <span>Northeastern University</span>
+              <div class="social">
+              </div>
+            </div>
+          </div>
+          <!-- Add more organizers as needed -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- <section id="organizers">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Volunteers</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h5>
+              Eason Ding, Xiaoyu Yang, Iris Xia, Benlu Wang, Elizabeth Schaefer, Juliano Portela, Austin Feng, Dongsuk Jang, Ziyao Shangguan
+            </h5>
+          </div>
+        </div>
+      </div>
+    </section>End Volunteers Section -->
+
+    <!-- <section id="organizers">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Acknowledgement</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h5>
+              We honor the memory of  Dragomir R. Radev, A. Bartlett Giamatti Professor of Computer Science and a cherished member of our field whose contributions and spirit have left a lasting impact on the New England NLP community and far beyond. 
+            </h5>
+          </div>
+        </div>
+      </div>
+    </section>End Acknowledgement Section -->
+
+    
+    <!-- End Organizers Section -->
+    <!-- End Senior Organizers Section -->
+
+    <!-- Sponsors -->
+    <!-- <Br> -->
+    <section id="directions">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Venue</h2>
+        </div>
+        <div class="maps-row">
+          <div class="map-container">
+            <p>Curry Student Center, 360 Huntington Ave, Boston, MA 02115 </p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7449.707203811723!2d-71.0874986!3d42.339059999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37a186f40794d%3A0x53d47e4b891d96ed!2sCurry%20Student%20Center!5e1!3m2!1sen!2sus!4v1753639500278!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+        <section id="sponsors">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Sponsors</h2>
+        </div>
+        <h5>We thank our sponsors for their generous support! </h5>
+
+        <div class="row">
+          <!-- Organizer 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <a href="https://wti.yale.edu/">
+                <div class="organizer-img">
+                  <img src="assets/img/northeastern.jpeg">
+                </div>
+                <h4>Northeastern University</h4>
+                <!-- <span>Yale University</span> -->
+                <div class="social">
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <a href="https://www.goodfire.ai/">
+                <div style="width: 250px; height: 150px; margin: 0 auto 10px auto; position: relative;">
+                  <img src="assets/img/goodfire.svg" alt="Organizer" style="width: 100%; height: 100%" />
+                </div>
+                <h4>Goodfire</h4>
+                <!-- <span>Yale University</span> -->
+                <div class="social">
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <a href="https://fds.yale.edu/">
+                <div class="organizer-img">
+                  <img src="assets/img/fds.png">
+                </div>
+                <h4>Yale FDS</h4>
+                <span>Yale University</span>
+                <div class="social">
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <a href="https://provost.yale.edu/">
+                <div class="organizer-img">
+                  <img src="assets/img/provost.png">
+                </div>
+                <h4>Office of the Provost</h4>
+                <span>Yale University</span>
+                <div class="social">
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="organizer-info">
+              <a href="https://medicine.yale.edu/">
+                <div class="organizer-img">
+                  <img src="assets/img/ysm.png">
+                </div>
+                <h4>Yale School of Medicine</h4>
+                <span>Yale University</span>
+                <div class="social">
+                </div>
+              </a>
+            </div>
+          </div> -->
+          <!-- Add more organizers as needed -->
+        </div>
+      </div>
+    </section><!-- End Organizers Section -->
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
 
     <div class="container">
-    <div class="three columns">
-        <div style="text-align: center">
-            <a class="button menu" href="./index.html">Home</a>
-            <a class="button menu" href="https://docs.google.com/forms/d/e/1FAIpQLSdJmISMQoOQWYTyaMYG-Te7_lieta203BQEqXa6N_PqYiv15A/viewform?usp=header">Registration</a>
-            <a class="button menu" href="https://docs.google.com/forms/d/e/1FAIpQLScgZGP4mXNBNbT38RpStqOPmwitbKnAOS4DwAfNHHjb50I8oA/viewform?usp=header">Abstract Submission</a>
-            <a class="button menu" href="./schedule.html">Schedule</a>
+      <div class="copyright">
+        <!-- &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved -->
+      </div>
+      <div class="credits">
+        <!--
+        All the links in the footer should remain intact.
+        You can delete the links only if you purchased the pro version.
+        Licensing information: https://bootstrapmade.com/license/
+        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
+      -->
+        Template adopted from <a href="https://set-llm.github.io/">SeT LLM @ ICLR 2024</a>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!--  <a href="https://info.flagcounter.com/fIO5"><img src="https://s05.flagcounter.com/count2/fIO5/bg_FFFFFF/txt_000000/border_CCCCCC/columns_6/maxflags_20/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>-->
+
+  <!-- Modal functionality -->
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = "block";
+      document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+    }
+    
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+      document.body.style.overflow = "auto"; // Re-enable scrolling
+    }
+    
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+    }
+  </script>
+
+  <!-- Modal for Yilun Du -->
+  <!-- <div id="yilun-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('yilun-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/yilun.png" alt="Yilun Du">
+          <div class="modal-header-info">
+            <h3>Yilun Du</h3>
+            <p>Harvard University</p>
+            <p><strong>Talk:</strong> Constructing Generalizable Multimodal Models through Compositional Generation</p>
+          </div>
         </div>
-        <br>
-    </div>
-        
-    <div class="seven columns">
-        <p>
-            New England Mechanistic Interpretability (NEMI) is a workshop for academic and industry researchers working on mechanistic interpretability.
-        </p>
-
-        <h5>Dates (all deadlines in AoE)</h5>
-        <ul>
-            <li>Registration submission deadline: August 4th, 2025.</li>
-            <li>Poster/Talk Abstract submission deadline: August 9th, 2025.</li>
-            <li>Notification deadline: August 12th, 2025.</li>
-            <li>Event date: August 22, 2025</li>
-        </ul>
-
-        <h5>Location</h5>
-        <ul>
-            <li>Venue:  <a href="https://maps.app.goo.gl/ZhyNiXg9x1oTKjVPA"> Northeastern University, Boston, MA 02115</a><br/>
-        </ul>
-
-                
-        <h5>Call for Submissions</h5>
-
-        <p>
-            We invite submissions for the NEMI 2025 workshop, a one-day event dedicated to exploring the latest developments in mechanistic interpretability research. 
-            We welcome submissions on all aspects of interpretability. 
-            Some of them will be selected for oral presentations and the remaining will be presented as posters.
-            We encourage submissions from rising researchers who are enrolled in graduate programs at universities located in the New England region. 
-        </p> 
-
-        <p>
-            Submissions can be a work in progress or already published work. 
-            The overall length of the extended abstract should not exceed 500 words.
-        </p>
-
-        <h5>Senior Organizing Committee</h5>
-        <p>       
-                David Bau, Northeastern University<br/>
-                Jacob Andreas, MIT<br/>
-                Hima Lakkaraju, Harvard University<br/>
-                Najoung Kim, Boston University<br/>
-        </p>
-        <h5>Student Organizing Committee</h5>
-        <p>       
-            Koyena Pal, Northeastern University<br/>
-            Alex Loftus, Northeastern University<br/>
-            Emma Bortz, Northeastern University<br/>
-            Aruna Sankaranarayanan, MIT
-            
-    </p>
-        <p>
-            If you have any questions, please contact the organizing team at <a href="mailto:"">thebaulab@gmail.com</a>.<br/>
-        </p>
-
-        <div style="text-align: center;">
-            <h5 style="font-style: italic; font-size: 14px;">Sponsored by</h5>
-            <p align="center" style="line-height: 60px;">
-            <img src="images/northeastern_logo.svg" style="margin-right: 15px;" width="200" height="120">
-            <a href="https://goodfire.ai" target="_blank">
-                <img src="images/goodfire.svg" style="margin-right: 15px;" width="200" height="120" alt="Goodfire">
-            </a>
-            </p><br/>
+        <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>To construct intelligent embodied agents, it is important that models can ingest
+          and output signals in the form of images, text, actions, and various other sensor modalities.
+          However, gathering data that covers all such combinations of input data is often challenging, 
+          and existing multimodal models are often frail and sensitive to distribution shift. In this talk, 
+          I'll illustrate how we can circumvent some of these data challenges by instead constructing multimodal
+          models compositionally -- combining models that focus on different modalities such as text,
+          videos, and actions. I'll illustrate how such compositional systems enable us to construct
+          zero-shot multimodal systems that can accomplish various tasks such as reasoning, vision-language
+          captioning and robotic planning.</p>
         </div>
-
+        <div class="modal-section">
+          <h4>Bio</h4>
+          <p>Yilun Du is an incoming assistant professor at Harvard University in the Kempner Institute
+           and Computer Science. He is currently a senior research scientist at Google Deepmind and 
+          previously received his PhD at MIT.</p>
+        </div>
+      </div>
     </div>
+  </div> -->
 
-    <div class="two columns">
-        <h5>Directions</h5>
-        <p>
-            August 22nd, 2025
-            <br/>
-            10:00am - 6:00pm
-        </p>
-        <p>
-            Curry Student Center <br/> 
-            360 Huntington Ave, Boston, MA 02115 <br/>
-        </p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5898.454773476026!2d-71.09374431093312!3d42.33767519692347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37a2242375c21%3A0x36cbd69c9cb6a03d!2sEgan%20Research%20Center!5e0!3m2!1sen!2sus!4v1724011738748!5m2!1sen!2sus" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <p>
-        </p>
+  <!-- Modal for He He -->
+  <!-- <div id="he-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('he-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/he.png" alt="He He">
+          <div class="modal-header-info">
+            <h3>He He</h3>
+            <p>New York University</p>
+            <p><strong>Talk:</strong> How Transformers Search in Reasoning Tasks</p>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>This talk will study two modes of reasoning in transformer language models: latent reasoning through the forward pass and explicit reasoning through chain-of-thought. For latent reasoning, we show that transformers can learn efficient parallel search algorithms. For explicit reasoning, we show that models know when their intermediate answers are correct during search, and this can be used to improve reasoning efficiency.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Bio</h4>
+          <p>He He is an assistant professor in computer science and data science at New York University. She is interested in how large language models work and potential risks of this technology.</p>
+        </div>
+      </div>
     </div>
+  </div> -->
 
-</div>
+  <!-- Modal for Tamar Rott Shaham -->
+  <div id="tamar-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('tamar-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/tamar.jpg" alt="Tamar Rott Shaham">
+          <div class="modal-header-info">
+            <h3>Tamar Rott Shaham</h3>
+            <p>MIT</p>
+            <p>Can Language Models Interpret Humans?</p>
+          </div>
+        </div>
+        <!-- <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Transformers are still the dominant architecture for language modeling (and generative AI more broadly). This talk will speculate on how Transformers (in particular the attention mechanism) will change over the near future.</p>
+        </div> -->
+        <div class="modal-section">
+          <h4>Bio</h4>
+          <p>Tamar Rott Shaham is an incoming assistant professor at the Faculty of Mathematics and Computer Science at Weizmann. She is currently a postdoctoral researcher at MIT CSAIL in Antonio Torralba’s lab. She received her PhD from the ECE Technion, supervised by Prof. Tomer Michaeli. Tamar has received several awards, including the ICCV 2019 Best Paper Award (Marr Prize), the Google WTM Scholarship, the Adobe Research Fellowship, the Rothchild Postdoctoral Fellowship, the Vatat-Zuckerman Postdoctoral Scholarship and the Schmidt Postdoctoral Award.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Ekdeep Singh Lubana -->
+  <div id="ekdeep-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('ekdeep-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/ekdeep.jpeg" alt="Ekdeep Singh Lubana">
+          <div class="modal-header-info">
+            <h3>Ekdeep Singh Lubana</h3>
+            <p>Harvard</p>
+            <p>Looking Inwards: Implicit Assumptions Formally Constrain Mechanistic Interpretability</p>
+          </div>
+        </div>
+        <!-- <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Even after fine-tuning and reinforcement learning, language models can be difficult to control reliably with prompts alone. This talk proposes a new approach to specifying and executing tasks using language models, based on probabilistic programming. Language model probabilistic programs precisely and compositionally specify target distributions from which to generate samples. These distributions generally arise by applying hard and soft constraints to the default output distributions of one or more LMs. Samples can then be drawn approximately from these target distributions using sequential Monte Carlo — and their quality improved via test-time scaling of the number of particles used by the algorithm. This talk will demonstrate that language model probabilistic programs can improve downstream performance on a broad variety of tasks, from Python code generation to molecule synthesis to trip planning. It will also show how language models can themselves write language model probabilistic programs, enabling small LMs can outperform frontier models on a number of challenging tasks.</p>
+        </div> -->
+        <div class="modal-section">
+          <h4>Bio</h4>
+          <p>Ekdeep Singh Lubana is a research fellow at the CBS-NTT Program in Physics of Intelligence at Harvard University. His research focuses on developing predictive theories for phenomena observed during evaluation and deployment of neural networks—e.g., emergent learning curves, in-context learning novel concept structures, and effects of post-training. His recent work has focused on making explicit assumptions underlying tools popularly used for neural network interpretability. Ekdeep completed a PhD co-affiliated at University of Michigan and Center for Brain Science, Harvard.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Lee Sharkey -->
+  <div id="lee-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('lee-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/lee.webp" alt="Lee Sharkey">
+          <div class="modal-header-info">
+            <h3>Lee Sharkey</h3>
+            <p>Goodfire</p>
+            <p>Mech Interp: Where should we go from here?</p>
+          </div>
+        </div>
+        <!-- <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Abstract coming soon.</p>
+        </div> -->
+        <div class="modal-section">
+          <h4>Bio</h4>
+          <p>Lee is a Principal Investigator at Goodfire (London) where his team work on developing new interpretability methods. His previous work includes Attribution-based Parameter Decomposition and sparse autoencoders as a solution to superposition. Prior to Goodfire, Lee co-founded Apollo Research and led the interpretability team there.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Aaron Mueller -->
+  <div id="aaron-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('aaron-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/aaron.jpeg" alt="Aaron Mueller">
+          <div class="modal-header-info">
+            <h3>Aaron Mueller</h3>
+            <p>Boston University</p>
+            <p>Beyond Human Concepts: Evaluating and Applying Unsupervised Interpretability</p>
+          </div>
+        </div>
+        <!-- <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>We describe recent methods that enable large language models (LLMs) to self-improve, increasing their performance on tasks relevant to human users. In particular we describe the methods of Self-Rewarding LLMs (https://arxiv.org/abs/2401.10020), Iterative Reasoning Preference Optimization (https://arxiv.org/abs/2404.19733), Thinking LLMs (https://arxiv.org/abs/2410.10630), Meta-Rewarding LLMs (https://arxiv.org/abs/2407.19594), and more!</p>
+        </div> -->
+        <div class="modal-section">
+          <h4>Bio</h4>
+          <p>Aaron Mueller is an assistant professor in the Department of Computer Science at Boston University. His research centers on developing methods and evaluations for mechanistic interpretability inspired by causal and linguistic principles, and applying these for precise model control and improved efficiency. He completed a Ph.D. at Johns Hopkins University and was a Zuckerman postdoctoral fellow at Northeastern and the Technion. His work has been published in ML and NLP venues (such as ICLR, ACL, and EMNLP) and has won awards at TMLR and ACL. He has recently been featured in the New York Times (2023) and IEEE Spectrum (2024) as an organizer of the BabyLM Challenge.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
+
+
 </html>
