@@ -275,11 +275,11 @@
               </tr>
               <tr>
                 <td><strong>10:30 AM - 10:40 AM</strong></td>
-                <td>Student Talk 1</td>
+                <td>Student Talk 1: Amil Dravid<i><a href="#" onclick="openModal('amil-modal'); return false;">"Vision Transformers Don't Need Trained Registers"</a></i></td>
               </tr>
               <tr>
                 <td><strong>10:40 AM - 10:50 AM</strong></td>
-                <td>Student Talk 2</td>
+                <td>Student Talk 2: Andrew Lee<i><a href="#" onclick="openModal('andrew-modal'); return false;">"Shared Global and Local Geometry of Language Model Embeddings"</a></i></td>
               </tr>
               <tr>
                 <td><strong>10:50 AM - 11:00 AM</strong></td>
@@ -319,11 +319,11 @@
               </tr>
               <tr>
                 <td><strong>04:30 PM - 04:40 PM</strong></td>
-                <td>Student Talk 3</td>
+                <td>Student Talk 3: Helena Casademunt<i><a href="#" onclick="openModal('helena-modal'); return false;">"Steering Out-of-Distribution Generalization with Concept Ablation Fine-Tuning"</a></i></td>
               </tr>
               <tr>
                 <td><strong>04:40 PM - 04:50 PM</strong></td>
-                <td>Student Talk 4</td>
+                <td>Student Talk 4: Michael Hanna<i><a href="#" onclick="openModal('michael-modal'); return false;">"Circuit-tracer: A New Library for Feature Circuits"</a></i></td>
               </tr>
               <tr>
                 <td><strong>04:50 PM - 05:10 PM</strong></td>
@@ -331,7 +331,7 @@
               </tr>
               <tr>
                 <td><strong>05:10 PM - 05:50 PM</strong></td>
-                <td>Panel Discussion</td>
+                <td>Panel Discussion: Sam Marks, Jack Merullo, Jacob Andreas, Hima Lakkaraju, and Najoung Kim</td>
               </tr>
               <tr>
                 <td><strong>05:55 PM - 06:00 PM</strong></td>
@@ -1071,6 +1071,98 @@
     }
   </script>
 
+  <div id="amil-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('amil-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/amil.jpg" alt="Amil Dravid">
+          <div class="modal-header-info">
+            <h3>Amil Dravid</h3>
+            <p>UC Berkeley</p>
+            <p>Vision Transformers Don't Need Trained Registers</p>
+          </div>
+        </div>
+        <!-- <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Transformers are still the dominant architecture for language modeling (and generative AI more broadly). This talk will speculate on how Transformers (in particular the attention mechanism) will change over the near future.</p>
+        </div> -->
+        <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>We investigate the mechanism underlying a previously identified phenomenon in Vision Transformers – the emergence of high-norm tokens that lead to noisy attention maps (Darcet et al., 2024). We observe that in multiple models (e.g., CLIP, DINOv2), a sparse set of neurons is responsible for concentrating high-norm activations on outlier tokens, leading to irregular attention patterns and degrading downstream visual processing. While the existing solution for removing these outliers involves retraining models from scratch with additional learned register tokens, we use our findings to create a training-free approach to mitigate these artifacts. By shifting the high-norm activations from our discovered register neurons into an additional untrained token, we can mimic the effect of register tokens on a model already trained without registers. We demonstrate that our method produces cleaner attention and feature maps, enhances performance over base models across multiple downstream visual tasks, and achieves results comparable to models explicitly trained with register tokens. We then extend test-time registers to off-the-shelf vision-language models to improve their interpretability. Our results suggest that test-time registers effectively take on the role of register tokens at test-time, offering a training-free solution for any pre-trained model released without them.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="michael-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('michael-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/michael.jpg" alt="Michael Hanna">
+          <div class="modal-header-info">
+            <h3>Michael Hanna</h3>
+            <p>University of Amsterdam</p>
+            <p>Circuit-tracer: A New Library for Feature Circuits</p>
+          </div>
+        </div>
+        <!-- <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Transformers are still the dominant architecture for language modeling (and generative AI more broadly). This talk will speculate on how Transformers (in particular the attention mechanism) will change over the near future.</p>
+        </div> -->
+        <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Feature circuits aim to shed light on LLM behavior by identifying the features that are causally responsible for a given LLM output, and connecting them into a directed graph, or circuit, that explains how both each feature and each output arose. However, performing circuit analysis is challenging: the tools for finding, visualizing, and verifying feature circuits are complex and spread across multiple libraries. To solve this, we introduce circuit-tracer, an open-source library for identifying feature circuits. circuit-tracer provides an integrated pipeline for finding, visualizing, annotating, and performing interventions on such feature circuits, tested on models with up to 14 billion parameters. We make circuit-tracer available to both developers and end users, via integration with tools such as Neuronpedia, which provides a user-friendly interface.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="helena-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('helena-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/helena.jpg" alt="Helena Casademunt">
+          <div class="modal-header-info">
+            <h3>Helena Casademunt</h3>
+            <p>Harvard University</p>
+            <p>Steering Out-of-Distribution Generalization with Concept Ablation Fine-Tuning</p>
+          </div>
+        </div>
+        <!-- <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Transformers are still the dominant architecture for language modeling (and generative AI more broadly). This talk will speculate on how Transformers (in particular the attention mechanism) will change over the near future.</p>
+        </div> -->
+        <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Fine-tuning large language models (LLMs) can lead to unintended out-of-distribution generalization. Standard approaches to this problem rely on modifying training data, for example by adding data that better specify the intended generalization. However, this is not always practical. We introduce Concept Ablation Fine-Tuning (CAFT), a technique that leverages interpretability tools to control how LLMs generalize from fine-tuning, without needing to modify the training data or otherwise use data from the target distribution. Given a set of directions in an LLM's latent space corresponding to undesired concepts, CAFT works by ablating these concepts with linear projections during fine-tuning, steering the model away from unintended generalizations. We successfully apply CAFT to three fine-tuning tasks, including emergent misalignment, a phenomenon where LLMs fine-tuned on a narrow task generalize to give egregiously misaligned responses to general questions. Without any changes to the fine-tuning data, CAFT reduces misaligned responses by 10x without degrading performance on the training distribution. Overall, CAFT represents a novel approach for steering LLM generalization without modifying training data.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="andrew-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal('andrew-modal')">&times;</span>
+      <div class="modal-body">
+        <div class="modal-header">
+          <img src="assets/img/speakers/andrew.jpg" alt="Andrew Lee">
+          <div class="modal-header-info">
+            <h3>Andrew Lee</h3>
+            <p>Harvard University</p>
+            <p>Shared Global and Local Geometry of Language Model Embeddings</p>
+          </div>
+        </div>
+        <!-- <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Transformers are still the dominant architecture for language modeling (and generative AI more broadly). This talk will speculate on how Transformers (in particular the attention mechanism) will change over the near future.</p>
+        </div> -->
+        <div class="modal-section">
+          <h4>Abstract</h4>
+          <p>Researchers have recently suggested that models share common representations. In our work, we find numerous geometric similarities across the token embeddings of large language models. First, we find ``global'' similarities: token embeddings often share similar relative orientations. Next, we characterize local geometry in two ways: (1) by using Locally Linear Embeddings, and (2) by defining a simple measure for the intrinsic dimension of each embedding. Both characterizations allow us to find local similarities across token embeddings. Additionally, our intrinsic dimension demonstrates that embeddings lie on a lower dimensional manifold, and that tokens with lower intrinsic dimensions often have semantically coherent clusters, while those with higher intrinsic dimensions do not. Based on our findings, we introduce EMB2EMB, a simple application to linearly transform steering vectors from one language model to another, despite the two models having different dimensions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Modal for Tamar Rott Shaham -->
   <div id="tamar-modal" class="modal">
     <div class="modal-content">
